@@ -1,0 +1,56 @@
+
+import os
+
+mypath = 'c:/users/Julie'
+if not os.path.exists(mypath):
+    os.makedirs(mypath)
+
+myfile_1 = 'c:/users/Julie/FileOne'
+if not os.path.exists(myfile_1):
+   f_1 = open(myfile_1, 'w')
+   f_1.close()
+
+myfile_2 = 'c:/users/Julie/FileTwo'
+if not os.path.exists(myfile_2):
+   f_2 = open(myfile_2, 'w')
+   f_2.close()
+
+f_1 = open(myfile_1, 'a')
+line_1 = 'My line One'
+line_2 = 'My Line Two'
+line_3 = 'My Line Three'
+f_1.write(line1)
+f_1.write("n")
+f_1.write(line2)
+f_1.write("n")
+f_1.write(line3)
+f_1.write("n")
+f_1.close()
+
+f_1 = open(myfile_1.txt,'r') 
+ print(f_1.readline())
+ print(f_1.readline())
+ print(f_1.readline())
+f_1.close()
+
+os.system('cp myfile_1 myfile_2')
+
+def find(name, path):
+    for root, dirs, files in os.walk(path):
+        if name in files:
+            return os.path.join(root, name)
+
+find(file_1, mypath)
+find(file_2, mypath)
+
+os.listdir(mypath)
+
+==================================================
+1.	mkdir /someFolder
+2.	create /file1
+3.	create /someFolder/file1
+4.	write "Some text" /file1
+5.	cat /file1
+6.	cp /file1 /someFolder/file2
+7.	find file2 (Should return all found locations for file2)
+8.	find /someFolder file2
